@@ -1,15 +1,23 @@
+QUESTIONS OF WORKSHEET 3:
+1) Sort the customer IDs in order to find the customer who authored the most reviews. Which customers are the top 3 reviewers (with the most reviews)?
+2) Sort the products in order to find the product that has the most reviews. What are the top 3 most reviewed products?
+3) Sort the helpfulness values in the file. How many times does each helpfulness value appear overall?
+
 Script started on 2021-09-17 07:30:51+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+QUESTION 1 ANSWER: CUSTOMER ID'S
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ sort -nk2 amazon_reviews_us_Books_v1_02.tsv | cut -f 2 | uniq -c | sort -nr | head -n 3
   21922 50122160
    9964 50732546
    2664 52615377
+QUESTION 2 ANSWER: PRODUCT ID'S
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ sort -nk4 amazon_reviews_us_Books_v1_02.tsv | cut -f 4 | uniq -c | sort -nr | head -n 3
    4625 043935806X
    3739 0439139597
    2666 0525947647
+QUESTION 3 ANSWER: ALL HELPFUL VOTE COUNTS 
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ cut -f 9 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c
  459924 0
-      1 helpful_votes
+      1 helpful_votes  // this is from the header line of the amazon database
  408857 1
  333718 2
  269068 3
